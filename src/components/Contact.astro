@@ -1,0 +1,69 @@
+---
+import "../styles/contact.css";
+---
+
+<section class="contact-testimonials" aria-label="Contact and testimonials">
+	<div class="contact-card">
+		<div>
+			<h2>Design Engineer experienced in taking products from concept to launch.</h2>
+			<p>If you're looking to start a new web project, get in touch to discuss your requirements with me in more detail.</p>
+			<a href="mailto:hello@example.com">Say hello</a>
+		</div>
+
+		<div class="clock" aria-live="polite">
+			<p data-clock-date>Sunday, 20 September</p>
+			<time data-clock-time datetime="">20:53:52</time>
+		</div>
+	</div>
+
+	<div class="testimonial-card" data-testimonial-slider>
+		<div class="testimonial-slide is-active" data-testimonial-slide>
+			<blockquote>
+				Incredibly thorough and professional in bringing our new website to life. As designers, we can be quite picky about how things work but he took the challenge and developed every single aspect, beautifully.
+			</blockquote>
+			<cite>
+				<span>Renata Garcia</span>
+				Producer at Moth
+			</cite>
+		</div>
+
+		<div class="testimonial-slide" data-testimonial-slide>
+			<blockquote>
+				Aditya understood the product quickly, refined the interaction details, and delivered a fast, elegant site that felt considered from the first click.
+			</blockquote>
+			<cite>
+				<span>Karan Mehta</span>
+				Founder at Northstar
+			</cite>
+		</div>
+
+		<div class="testimonial-slide" data-testimonial-slide>
+			<blockquote>
+				The process was calm, focused, and highly collaborative. Every page now feels sharper, clearer, and easier for our customers to use.
+			</blockquote>
+			<cite>
+				<span>Anika Rao</span>
+				Creative Director at Studio Eleven
+			</cite>
+		</div>
+
+		<div class="testimonial-footer">
+			<div class="testimonial-dots" aria-label="Testimonial position">
+				<button class="is-active" type="button" aria-label="Show testimonial 1" data-testimonial-dot></button>
+				<button type="button" aria-label="Show testimonial 2" data-testimonial-dot></button>
+				<button type="button" aria-label="Show testimonial 3" data-testimonial-dot></button>
+			</div>
+
+			<div class="testimonial-controls">
+				<button type="button" aria-label="Previous testimonial" data-testimonial-prev>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+				</button>
+				<button type="button" aria-label="Next testimonial" data-testimonial-next>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="/scripts/testimonials.js" defer></script>

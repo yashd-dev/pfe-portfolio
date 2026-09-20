@@ -1,0 +1,103 @@
+---
+import "../styles/faq.css";
+
+const faqs = [
+  {
+    question: "What projects do you work on?",
+    answer:
+      "I work on portfolio sites, marketing websites, product pages, and focused web experiences for founders, studios, and growing teams.",
+  },
+  {
+    question: "Do you work remotely or on-site?",
+    answer:
+      "I primarily work remotely from my studio in London, but I'm happy to attend meetings at your London-based office if needed or work together as part of a larger team.",
+  },
+  {
+    question: "What's your tech stack and tooling?",
+    answer:
+      "I usually build with Astro, React, TypeScript, modern CSS, and lightweight animation tools, choosing the stack around the needs of each project.",
+  },
+  {
+    question: "Can I see more of your work?",
+    answer:
+      "Yes. I can share additional case studies, prototypes, and private client work after a quick conversation about what you're looking for.",
+  },
+  {
+    question: "How can I start a new project?",
+    answer:
+      "Send a short note with your goals, timeline, and any existing references. I'll reply with next steps, availability, and a simple project outline.",
+  },
+];
+
+const defaultIndex = 1;
+---
+
+<section class="faq" aria-labelledby="faq-title">
+  <div class="faq-inner">
+    <p id="faq-title" class="faq-label">Frequently asked questions</p>
+
+    <div class="faq-list" data-faq-list>
+      {
+        faqs.map((faq, index) => (
+          <article
+            class:list={["faq-item", index === defaultIndex && "is-active"]}
+            data-faq-item
+          >
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded={index === defaultIndex ? "true" : "false"}
+              data-faq-trigger
+            >
+              <span class="faq-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <span class="faq-question-text">{faq.question}</span>
+
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+
+            <div class="faq-answer-wrap">
+              <p class="faq-answer">{faq.answer}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const list = document.querySelector("[data-faq-list]");
+
+  if (list) {
+    const items = Array.from(
+      list.querySelectorAll<HTMLElement>("[data-faq-item]"),
+    );
+
+    const activate = (activeItem: HTMLElement) => {
+      items.forEach((item) => {
+        const isActive = item === activeItem;
+        const trigger = item.querySelector<HTMLButtonElement>(
+          "[data-faq-trigger]",
+        );
+
+        item.classList.toggle("is-active", isActive);
+        trigger?.setAttribute("aria-expanded", String(isActive));
+      });
+    };
+
+    items.forEach((item) => {
+      const trigger = item.querySelector<HTMLButtonElement>(
+        "[data-faq-trigger]",
+      );
+
+      if (!trigger) return;
+
+      item.addEventListener("mouseenter", () => activate(item));
+      trigger.addEventListener("focus", () => activate(item));
+      trigger.addEventListener("click", () => activate(item));
+    });
+  }
+</script>
