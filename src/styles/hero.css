@@ -32,7 +32,6 @@
   height: 0.45rem;
   border-radius: 999px;
   background: var(--color-online);
-  box-shadow: 0 0 18px rgb(167 251 128 / 0.75);
 }
 
 .hero-copy {
@@ -132,6 +131,10 @@
     min-height: auto;
     padding: 2rem;
     gap: 2rem;
+  }
+
+  .availability {
+    display: none;
   }
 
   .hero-copy {
