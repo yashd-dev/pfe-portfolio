@@ -1,0 +1,57 @@
+:root {
+  --color-taupe-50: #fbfaf9;
+  --color-taupe-100: #f3f1f1;
+  --color-taupe-200: #e8e4e3;
+  --color-taupe-300: #d8d2d0;
+  --color-taupe-400: #aba09c;
+  --color-taupe-500: #7c6d67;
+  --color-taupe-600: #5b4f4b;
+  --color-taupe-700: #473c39;
+  --color-taupe-800: #2b2422;
+  --color-taupe-900: #1d1816;
+  --color-taupe-920: #100d0c;
+  --color-taupe-950: #0c0a09;
+
+  --color-background: var(--color-taupe-950);
+  --color-surface: var(--color-taupe-920);
+  --color-card: var(--color-taupe-900);
+  --color-surface-muted: var(--color-taupe-800);
+  --color-text: var(--color-taupe-50);
+  --color-text-muted: var(--color-taupe-400);
+  --color-text-subtle: var(--color-taupe-500);
+  --color-button: var(--color-taupe-50);
+  --color-button-text: var(--color-taupe-950);
+  --color-accent: #ff8585;
+  --color-online: #a7fb80;
+
+  font-family:
+    "Satoshi",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-background);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+}
+
+a {
+  color: inherit;
+}

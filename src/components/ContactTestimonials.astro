@@ -1,0 +1,273 @@
+<section class="contact-testimonials" aria-label="Contact and testimonials">
+	<div class="contact-card">
+		<div>
+			<h2>Design Engineer experienced in taking products from concept to launch.</h2>
+			<p>If you're looking to start a new web project, get in touch to discuss your requirements with me in more detail.</p>
+			<a href="mailto:hello@example.com">Say hello</a>
+		</div>
+
+		<div class="clock" aria-live="polite">
+			<p data-clock-date>Sunday, 20 September</p>
+			<time data-clock-time datetime="">20:53:52</time>
+		</div>
+	</div>
+
+	<div class="testimonial-card" data-testimonial-slider>
+		<div class="testimonial-slide is-active" data-testimonial-slide>
+			<blockquote>
+				Incredibly thorough and professional in bringing our new website to life. As designers, we can be quite picky about how things work but he took the challenge and developed every single aspect, beautifully.
+			</blockquote>
+			<cite>
+				<span>Renata Garcia</span>
+				Producer at Moth
+			</cite>
+		</div>
+
+		<div class="testimonial-slide" data-testimonial-slide>
+			<blockquote>
+				Aditya understood the product quickly, refined the interaction details, and delivered a fast, elegant site that felt considered from the first click.
+			</blockquote>
+			<cite>
+				<span>Karan Mehta</span>
+				Founder at Northstar
+			</cite>
+		</div>
+
+		<div class="testimonial-slide" data-testimonial-slide>
+			<blockquote>
+				The process was calm, focused, and highly collaborative. Every page now feels sharper, clearer, and easier for our customers to use.
+			</blockquote>
+			<cite>
+				<span>Anika Rao</span>
+				Creative Director at Studio Eleven
+			</cite>
+		</div>
+
+		<div class="testimonial-footer">
+			<div class="testimonial-dots" aria-label="Testimonial position">
+				<button class="is-active" type="button" aria-label="Show testimonial 1" data-testimonial-dot></button>
+				<button type="button" aria-label="Show testimonial 2" data-testimonial-dot></button>
+				<button type="button" aria-label="Show testimonial 3" data-testimonial-dot></button>
+			</div>
+
+			<div class="testimonial-controls">
+				<button type="button" aria-label="Previous testimonial" data-testimonial-prev>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+				</button>
+				<button type="button" aria-label="Next testimonial" data-testimonial-next>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="/scripts/testimonials.js" defer></script>
+
+<style>
+	.contact-testimonials {
+		display: grid;
+		grid-template-columns: minmax(16rem, 18.75rem) minmax(0, 50.5rem);
+		gap: 1rem;
+		align-items: stretch;
+		justify-content: center;
+		background: var(--color-background);
+		padding: 9.5rem 2rem;
+	}
+
+	.contact-card,
+	.testimonial-card {
+		border-radius: 0.5rem;
+		background: var(--color-surface);
+	}
+
+	.contact-card {
+		display: flex;
+		min-height: 28.5rem;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1.7rem 1.45rem;
+	}
+
+	.contact-card h2 {
+		max-width: 14rem;
+		margin: 0;
+		color: var(--color-accent);
+		font-size: 1.45rem;
+		font-weight: 500;
+		letter-spacing: -0.04em;
+		line-height: 1.18;
+	}
+
+	.contact-card p {
+		max-width: 14rem;
+		margin: 1.15rem 0 0;
+		color: var(--color-text-subtle);
+		font-size: 0.82rem;
+		letter-spacing: -0.025em;
+		line-height: 1.35;
+	}
+
+	.contact-card a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 7.4rem;
+		margin-top: 2.35rem;
+		border-radius: 999px;
+		background: var(--color-button);
+		color: var(--color-button-text);
+		padding: 0.78rem 1.1rem;
+		font-size: 0.82rem;
+		font-weight: 700;
+		letter-spacing: -0.025em;
+		text-decoration: none;
+	}
+
+	.clock p {
+		margin: 0 0 0.2rem;
+		color: var(--color-text-subtle);
+		font-size: 1rem;
+		letter-spacing: -0.035em;
+	}
+
+	.clock time {
+		display: block;
+		color: var(--color-text);
+		font-size: 1.8rem;
+		font-weight: 500;
+		letter-spacing: -0.06em;
+		line-height: 1;
+	}
+
+	.testimonial-card {
+		position: relative;
+		display: flex;
+		min-height: 28.5rem;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 3.55rem 3.45rem 3.75rem;
+		overflow: hidden;
+	}
+
+	.testimonial-slide {
+		display: none;
+		max-width: 43rem;
+	}
+
+	.testimonial-slide.is-active {
+		display: block;
+	}
+
+	blockquote {
+		margin: 0;
+		color: var(--color-text);
+		font-size: clamp(1.8rem, 2.15vw, 2rem);
+		font-weight: 400;
+		letter-spacing: -0.06em;
+		line-height: 1.18;
+	}
+
+	cite {
+		display: block;
+		margin-top: 2.6rem;
+		color: var(--color-text-subtle);
+		font-size: 0.92rem;
+		font-style: normal;
+		letter-spacing: -0.025em;
+		line-height: 1.7;
+	}
+
+	cite span {
+		display: block;
+		color: var(--color-text);
+		font-size: 1rem;
+	}
+
+	.testimonial-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.testimonial-dots {
+		display: flex;
+		gap: 0.45rem;
+	}
+
+	.testimonial-dots button {
+		width: 0.45rem;
+		height: 0.45rem;
+		border: 0;
+		border-radius: 999px;
+		background: var(--color-taupe-600);
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.testimonial-dots button.is-active {
+		background: var(--color-text);
+	}
+
+	.testimonial-controls {
+		display: flex;
+		gap: 0.8rem;
+	}
+
+	.testimonial-controls button {
+		display: grid;
+		width: 1.1rem;
+		height: 1.1rem;
+		place-items: center;
+		border: 0;
+		background: transparent;
+		color: var(--color-text);
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.testimonial-controls button:first-child {
+		color: var(--color-taupe-600);
+	}
+
+	.testimonial-controls svg {
+		width: 1.1rem;
+		height: 1.1rem;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 2.2;
+	}
+
+	@media (max-width: 900px) {
+		.contact-testimonials {
+			grid-template-columns: 1fr;
+			padding: 4rem 1.25rem;
+		}
+
+		.contact-card,
+		.testimonial-card {
+			min-height: auto;
+		}
+
+		.contact-card {
+			gap: 4rem;
+		}
+
+		.testimonial-card {
+			padding: 2rem 1.45rem;
+			gap: 3rem;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.contact-testimonials {
+			padding-inline: 1rem;
+		}
+
+		blockquote {
+			font-size: 1.65rem;
+		}
+	}
+</style>

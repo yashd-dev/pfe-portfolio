@@ -1,0 +1,190 @@
+---
+const projects = [
+  {
+    name: "Ai Weiwei",
+    description:
+      "Single page side-scrolling experience for the new Ai Weiwei exhibition, Button Up! Built using Next.js, Storyblok, TypeScript, Motion and Tailwind.",
+    href: "#",
+    image:
+      "https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Ai Weiwei standing in front of an artwork",
+  },
+  {
+    name: "Ai Weiwei",
+    description:
+      "Single page side-scrolling experience for the new Ai Weiwei exhibition, Button Up! Built using Next.js, Storyblok, TypeScript, Motion and Tailwind.",
+    href: "#",
+    image:
+      "https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Ai Weiwei standing in front of an artwork",
+  },
+];
+---
+
+<section class="projects" id="work" aria-labelledby="projects-title">
+  <div class="projects-header">
+    <h2 id="projects-title">Projects</h2>
+    <p>
+      I’ve been helping brands realise their online potential from small and
+      medium sized enterprises to large corporate entities, as a solo developer
+      or as part of a larger team.
+    </p>
+  </div>
+
+  <div class="project-list">
+    {
+      projects.map((project) => (
+        <article class="project-card">
+          <div class="project-copy">
+            <p class="project-name">{project.name}</p>
+            <div>
+              <h3>{project.description}</h3>
+              <a
+                href={project.href}
+                aria-label={`Open ${project.name} project`}
+              >
+                Open project
+              </a>
+            </div>
+          </div>
+
+          <div class="project-image">
+            <img src={project.image} alt={project.imageAlt} />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .projects {
+    background: var(--color-background);
+    padding: 4.1rem 8.9rem 6rem;
+  }
+
+  .projects-header {
+    max-width: 33rem;
+  }
+
+  .projects-header h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(2.8rem, 3.6vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.075em;
+    line-height: 1;
+  }
+
+  .projects-header p {
+    max-width: 30rem;
+    margin: 1.7rem 0 0;
+    color: var(--color-text-subtle);
+    font-size: 1rem;
+    letter-spacing: -0.035em;
+    line-height: 1.35;
+  }
+
+  .project-list {
+    display: grid;
+    gap: 2rem;
+    margin-top: 7.5rem;
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 0.45rem;
+    overflow: hidden;
+    background: var(--color-card);
+  }
+
+  .project-copy {
+    display: flex;
+    min-height: 39.3rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5.2rem 5rem 4.9rem;
+  }
+
+  .project-name {
+    margin: 0;
+    color: var(--color-accent);
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+  }
+
+  .project-copy h3 {
+    max-width: 35rem;
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(1.85rem, 2.1vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.065em;
+    line-height: 1.2;
+  }
+
+  .project-copy a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 9.1rem;
+    margin-top: 2.55rem;
+    border-radius: 999px;
+    background: var(--color-button);
+    color: var(--color-button-text);
+    padding: 0.85rem 1.35rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+  }
+
+  .project-image {
+    min-height: 39.3rem;
+    background: var(--color-surface-muted);
+  }
+
+  .project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 900px) {
+    .projects {
+      padding: 4rem 1.25rem;
+    }
+
+    .project-list {
+      margin-top: 4rem;
+    }
+
+    .project-card {
+      grid-template-columns: 1fr;
+    }
+
+    .project-copy {
+      min-height: auto;
+      gap: 5rem;
+      padding: 2rem 1.45rem;
+    }
+
+    .project-image {
+      min-height: 24rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .projects {
+      padding-inline: 1rem;
+    }
+
+    .project-copy h3 {
+      font-size: 1.65rem;
+    }
+  }
+</style>
